@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>魅力惠时尚奢侈品牌闪购网站 奢侈品排行榜销售NO.1 2000多个国际品牌官方合作伙伴-魅力惠官方网站</title>
+		<link rel="icon" href="{% static 'img/love.png' %}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+{#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/header-footer.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>#}
+
+	</head>
+    <body>
+    <div class="login">
+        <div class="header">
+            <ul class="header_left">
+                <li><img src="{% static 'img/zhuceyouli.gif' %}"><a href="{% url 'mei:register' %}">注册有礼</a></li>
+                <li>|</li>
+                <li><a href="{% url 'mei:register' %}">登录</a></li>
+                <li>|</li>
+                <li><a href="{% url 'mei:register' %}">收藏</a></li>
+            </ul>
+            <ul class="header_right">
+                <li><a href="#">在线咨询</a></li>
+                <li>|</li>
+                <li style="position: relative;"><a href="http://www.mei.com/mobile">手机版</a>
+                    <div class="download"><img src="{% static 'img/side_middle1.png' %}">
+                        <p>扫码下载APP</p></div>
+                </li>
+                <li>|</li>
+                <li><a href="http://weibo.com/glamoursaleschina?spm=a2o1p.8183483.0.0.fQlt7u"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="logo"><a href="{% url 'mei:index' %}"></a> <a href="{% url 'mei:index' %}"></a></div>
+    <div class="nav">
+        <div class="list">
+            <ul class="list_left">
+                <li><a href="{% url 'mei:index' %}">首页</a></li>
+                <li><a href="{% url 'mei:goods' %}">女士</a>
+                    <div class="smallnav">
+                        <div class="smallnav_left"><h4>热门活动</h4>
+                            <ul>
+                                <li><a href="#">买手精选 设计师连衣裙专场</a></li>
+                                <li><a href="#">买手精选 设计师品牌服装</a></li>
+                                <li><a href="#">买手精选 设计师包袋配饰</a></li>
+                                <li><a href="#">上海时装周 设计师品牌专场（满减）</a></li>
+                                <li><a href="#">上海时装周 JANE EYRE专场（满减）</a></li>
+                                <li><a href="#">LACOSTE 女鞋</a></li>
+                                <li><a href="#">RUCOLINE 意式休闲时尚女鞋</a></li>
+                                <li><a href="#">MO&amp;Co. 90S极简时髦女装</a></li>
+                            </ul>
+                            <p><a href="#" class="look">查看所有活动</a></p></div>
+                        <div class="smallnav_right"><h4>商品分类</h4>
+                            <ul>
+                                <li><a href="#">配饰</a></li>
+                                <li><a href="#">服装</a></li>
+                                <li><a href="#">鞋履</a></li>
+                                <li><a href="#">包袋</a></li>
+                                <li><a href="#">手表&amp;首饰</a></li>
+                                <li><a href="#">眼镜</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">男士</a>
+                    <div class="smallnav">
+                        <div class="smallnav_left"><h4>热门活动</h4>
+                            <ul>
+                                <li><a href="#">LACOSTE 男鞋</a></li>
+                                <li><a href="#">奢华男士 多品牌鞋履配饰</a></li>
+                                <li><a href="#">INITIAL 轻剪裁男装及配饰</a></li>
+                                <li><a href="#">VIKTOR &amp; ROLF 剑走偏锋的时尚艺术男士</a></li>
+                                <li><a href="#">COSTUME N COSTUME 简洁精致男士</a></li>
+                                <li><a href="#">SKECHERS 男鞋</a></li>
+                                <li><a href="#">LOTTUSSE 匠心工艺 典藏男士鞋包</a></li>
+                                <li><a href="#">PAUL&amp; SHARK 闲适优雅 格调男装</a></li>
+                            </ul>
+                            <p><a href="#" class="look">查看所有活动</a></p></div>
+                        <div class="smallnav_right"><h4>商品分类</h4>
+                            <ul>
+                                <li><a href="#">配饰</a></li>
+                                <li><a href="#">鞋履</a></li>
+                                <li><a href="#">服装</a></li>
+                                <li><a href="#">眼镜</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">美妆</a>
+                    <div class="smallnav">
+                        <div class="smallnav_left"><h4>热门活动</h4>
+                            <ul>
+                                <li><a href="#">FRESH 馥蕾诗护肤品专场</a></li>
+                                <li><a href="#">ALBION 澳尔滨护肤品专场</a></li>
+                                <li><a href="#">CLE DE PEAU BEAUTE 肌肤之钥高端护肤彩妆</a></li>
+                                <li><a href="#">The HISTORY OF WHOO 韩国宫廷护肤</a></li>
+                                <li><a href="#">ELIZABETH ARDEN 雅顿畅销护肤品</a></li>
+                                <li><a href="#">SK-II 日本殿堂级护肤品</a></li>
+                                <li><a href="#">REFA 风靡日本美容神器</a></li>
+                                <li><a href="#">秋季滋补佳品 保健品专场</a></li>
+                            </ul>
+                            <p><a href="#" class="look">查看所有活动</a></p></div>
+                        <div class="smallnav_right"><h4>商品分类</h4>
+                            <ul>
+                                <li><a href="#">护肤</a></li>
+                                <li><a href="#">彩妆</a></li>
+                                <li><a href="#">美体</a></li>
+                                <li><a href="#">美发</a></li>
+                                <li><a href="#">男士</a></li>
+                                <li><a href="#">香氛</a></li>
+                                <li><a href="#">保健</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">家居</a>
+                    <div class="smallnav">
+                        <div class="smallnav_left"><h4>热门活动</h4>
+                            <ul>
+                                <li><a href="#">职场温馨小物件 专场</a></li>
+                                <li><a href="#">DOWNIA 澳洲家居&amp;地毯(满减)</a></li>
+                                <li><a href="#">中秋佳节 床品特辑</a></li>
+                                <li><a href="#">利快 创意家居</a></li>
+                                <li><a href="#">LAYTEX &amp; TOM KATE 泰国乳胶枕</a></li>
+                                <li><a href="#">德式 厨房</a></li>
+                                <li><a href="#">热卖 小家电</a></li>
+                                <li><a href="#">THERMOS 膳魔师专场</a></li>
+                            </ul>
+                            <p><a href="#" class="look">查看所有活动</a></p></div>
+                        <div class="smallnav_right"><h4>商品分类</h4>
+                            <ul>
+                                <li><a href="#">摆件</a></li>
+                                <li><a href="#">厨具</a></li>
+                                <li><a href="#">卫浴</a></li>
+                                <li><a href="#">家电</a></li>
+                                <li><a href="#">床品</a></li>
+                                <li><a href="#">办公&amp;礼品</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">婴童</a>
+                    <div class="smallnav">
+                        <div class="smallnav_left"><h4>热门活动</h4>
+                            <ul>
+                                <li><a href="#">REIMA 芬兰功能性童装专场</a></li>
+                                <li><a href="#">REIMA 芬兰功能性鞋靴配饰专场</a></li>
+                                <li><a href="#">欢乐周末 玩伴专场</a></li>
+                                <li><a href="#">BIBI 巴西进口女童专场</a></li>
+                                <li><a href="#">BIBI 巴西进口男童专场</a></li>
+                                <li><a href="#">全球大搜罗 母婴尖货场</a></li>
+                                <li><a href="#"> HAO 日本潮牌童装女童专场</a></li>
+                                <li><a href="#">HAO 日本潮牌童装男童专场</a></li>
+                            </ul>
+                            <p><a href="#" class="look">查看所有活动</a></p></div>
+                        <div class="smallnav_right"><h4>商品分类</h4>
+                            <ul>
+                                <li><a href="#">服装</a></li>
+                                <li><a href="#">鞋履</a></li>
+                                <li><a href="#">其他</a></li>
+                                <li><a href="#">配饰</a></li>
+                                <li><a href="#">玩具</a></li>
+                                <li><a href="#">母婴</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">老佛爷奥莱</a>
+                    <div class="smallnav" style="width: 315px;">
+                        <div class="smallnav_left"><h4>热门活动</h4>
+                            <ul>
+                                <li><a href="#">老佛爷百货 女士裙装 夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 女士上装 夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 女士裤装 夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 女士鞋履 夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 女士包袋配饰夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 男士上装 夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 男士下装 夏日大降价</a></li>
+                                <li><a href="#">老佛爷百货 男士鞋履 夏日大降价</a></li>
+                            </ul>
+                            <p><a href="#" class="look">查看所有活动</a></p></div>
+                    </div>
+                </li>
+                <li><a href="#">即将推出</a></li>
+            </ul>
+            <ul class="list_right">
+                <li><a href="购物袋.html" class="sum">0</a></li>
+                <li>|</li>
+                <li><a href="购物袋.html">￥0.00</a></li>
+                <div class="shopping">
+                    <div class="no_shopping"> 购物袋暂无商品</div>
+                    <a href="#"></a></div>
+            </ul>
+        </div>
+    </div>
+    <div class="bag"><h2>购物袋</h2>
+        <div class="tab"><a href="#" class="now_tab">在售</a> <a href="#">心愿单</a> <a href="#">已失效</a></div>
+        <div class="_tab show"><p>您还没有可购买的商品，赶快将心仪的商品加入购物袋吧~</p></div>
+        <div class="_tab"><p>即将上新的商品可以加入心愿单啦！抢购快人一步，赶快行动吧~</p></div>
+        <div class="_tab"><p>活动结束的商品会显示在此</p></div>
+        <div class="shoppingList">
+            <div class="shoppingList_header">
+                <ul>
+                    <li class="list_name"><h3>保税仓直发</h3> <strong> <img src="{% static 'img/countdown.gif' %}"> 预计<span>5天</span>内发货，<span>10天</span>内送达
+                    </strong></li>
+                    <li>单价</li>
+                    <li>数量</li>
+                    <li>优惠</li>
+                    <li>小计</li>
+                    <li>删除</li>
+                </ul>
+            </div>
+            <div class="list_content">
+                <!--<ul> <li class="list_content_first"> <p class="list_img"> <a href="商品详情.html"> <img src="img/product1_1_bs.jpg" title="黑色翻盖束带双肩包"/> </a> </p> <p class="list_news"> <span class="brand"><a href="二级页面.html">Tory Burch</a></span> <span class="goods"><a href="商品详情.html">黑色翻盖束带双肩包</a></span> <span>尺寸：OS</span> </p> </li> <li>¥ 2540.00</li> <li> <div class="number"> <span class="reduce"></span> <span class="num">1</span> <span class="add"></span> </div> </li> <li></li> <li>¥ 2540.00</li> <li><img src="img/no_shopping.png" class="del"/></li> </ul>--> </div>
+            <div class="story">
+                <div class="background">
+                    <div class="story_content">
+                        <div class="brand_story"><p><span>【全场】</span>已享受满688元全场免运（跨境商品除外）</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pay">
+                <div class="btn">使用优惠券</div>
+                <div class="end">
+                    <div class="money"> 总金额（已免运费）： <span class="allMoney">￥<span>2540.00</span></span></div>
+                    <div class="buy"><span class="btn2">继续购物</span> <span class="btn3">立即结账</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_center">
+            <ul class="footer_ul1">
+                <li><a href="#" class="a1">100%品牌授权正品</a></li>
+                <li><a href="#" class="a2">满688免运费</a></li>
+                <li><a href="#" class="a3">7天无条件退货</a></li>
+                <li><a href="#" class="a4">超值折扣</a></li>
+                <li><a href="#" class="a5">9点限时闪购</a></li>
+                <li style="border: none;"><a href="#" class="a6">400-664-6698</a></li>
+            </ul>
+            <p class="footer_p1"><a href="#">关于魅力惠</a> <a href="#">加入我们</a> <a href="#">联系我们</a> <a href="#">使用帮助</a> <a
+                    href="#">使用规则</a> <a href="#">隐私声明</a> <a href="#">网站地图</a></p>
+            <p><span>COPYRIGHT©2016 杭州魅俪信息技术有限公司版权所有</span>浙ICP备16004860号-1 </p>
+            <p><a href="#"><img src="{% static 'img/guohui.png' %}"></a> <a href="#"><img
+                    src="{% static 'img/chengxin.png' %}"></a></p></div>
+    </div>
+    </body>
+</html>

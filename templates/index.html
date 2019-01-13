@@ -1,0 +1,1093 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>魅力惠时尚奢侈品牌闪购网站 奢侈品排行榜销售NO.1 2000多个国际品牌官方合作伙伴-魅力惠官方网站</title>
+		<link rel="icon" href="{% static 'img/love.png' %}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
+{#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/index.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/header-footer.js' %}" ></script>#}
+	</head>
+	<body>
+
+		<div class="login">
+			<div class="header">
+				<ul class="header_left">
+					<li><img src="{% static 'img/zhuceyouli.gif' %}"><a href="{% url 'mei:register' %}" target="_blank">注册有礼</a></li>
+					<li>|</li>
+					<li><a href="{% url 'mei:login' %}" target="_blank">登录</a></li>
+					<li>|</li>
+					<li><a href="{% url 'mei:login' %}" target="_blank">收藏</a></li>
+				</ul>
+				<ul class="header_right">
+					<li><a href="#">在线咨询</a></li>
+					<li>|</li>
+					<li style="position: relative;">
+						<a href="http://www.mei.com/mobile">手机版</a>
+						<div class="download">
+							<img src="{% static 'img/side_middle1.png' %}">
+							<p>扫码下载APP</p>
+						</div>
+					</li>
+					<li>|</li>
+					<li><a href="http://weibo.com/glamoursaleschina?spm=a2o1p.8183483.0.0.fQlt7u"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="logo">
+			<a href="{% url 'mei:index' %}"></a>
+			<a href="{% url 'mei:index' %}"></a>
+		</div>
+        <div class="nav">
+            <div class="list">
+                <ul class="list_left">
+                    <li><a href="#">首页</a></li>
+                    <li>
+                        <a href="#">女士</a>
+                        <div class="smallnav">
+                            <div class="smallnav_left">
+                                <h4>热门活动</h4>
+                                <ul>
+                                    <li><a href="#">买手精选 设计师连衣裙专场</a></li>
+                                    <li><a href="#">买手精选 设计师品牌服装</a></li>
+                                    <li><a href="#">买手精选 设计师包袋配饰</a></li>
+                                    <li><a href="#">上海时装周 设计师品牌专场（满减）</a></li>
+                                    <li><a href="#">上海时装周 JANE EYRE专场（满减）</a></li>
+                                    <li><a href="#">LACOSTE 女鞋</a></li>
+                                    <li><a href="#">RUCOLINE 意式休闲时尚女鞋</a></li>
+                                    <li><a href="#">MO&amp;Co. 90S极简时髦女装</a></li>
+                                </ul>
+                                <p><a href="#" class="look">查看所有活动</a></p>
+                            </div>
+                            <div class="smallnav_right">
+                                <h4>商品分类</h4>
+                                <ul>
+                                    <li><a href="#">配饰</a></li>
+                                    <li><a href="#">服装</a></li>
+                                    <li><a href="#">鞋履</a></li>
+                                    <li><a href="#">包袋</a></li>
+                                    <li><a href="#">手表&amp;首饰</a></li>
+                                    <li><a href="#">眼镜</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">男士</a>
+                        <div class="smallnav">
+                            <div class="smallnav_left">
+                                <h4>热门活动</h4>
+                                <ul>
+                                    <li><a href="#">LACOSTE 男鞋</a></li>
+                                    <li><a href="#">奢华男士 多品牌鞋履配饰</a></li>
+                                    <li><a href="#">INITIAL 轻剪裁男装及配饰</a></li>
+                                    <li><a href="#">VIKTOR &amp; ROLF 剑走偏锋的时尚艺术男士</a></li>
+                                    <li><a href="#">COSTUME N COSTUME 简洁精致男士</a></li>
+                                    <li><a href="#">SKECHERS 男鞋</a></li>
+                                    <li><a href="#">LOTTUSSE 匠心工艺 典藏男士鞋包</a></li>
+                                    <li><a href="#">PAUL&amp; SHARK 闲适优雅 格调男装</a></li>
+                                </ul>
+                                <p><a href="#" class="look">查看所有活动</a></p>
+                            </div>
+                            <div class="smallnav_right">
+                                <h4>商品分类</h4>
+                                <ul>
+                                    <li><a href="#">配饰</a></li>
+                                    <li><a href="#">鞋履</a></li>
+                                    <li><a href="#">服装</a></li>
+                                    <li><a href="#">眼镜</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">美妆</a>
+                        <div class="smallnav">
+                            <div class="smallnav_left">
+                                <h4>热门活动</h4>
+                                <ul>
+                                    <li><a href="#">FRESH 馥蕾诗护肤品专场</a></li>
+                                    <li><a href="#">ALBION 澳尔滨护肤品专场</a></li>
+                                    <li><a href="#">CLE DE PEAU BEAUTE 肌肤之钥高端护肤彩妆</a></li>
+                                    <li><a href="#">The HISTORY OF WHOO 韩国宫廷护肤</a></li>
+                                    <li><a href="#">ELIZABETH ARDEN 雅顿畅销护肤品</a></li>
+                                    <li><a href="#">SK-II 日本殿堂级护肤品</a></li>
+                                    <li><a href="#">REFA 风靡日本美容神器</a></li>
+                                    <li><a href="#">秋季滋补佳品 保健品专场</a></li>
+                                </ul>
+                                <p><a href="#" class="look">查看所有活动</a></p>
+                            </div>
+                            <div class="smallnav_right">
+                                <h4>商品分类</h4>
+                                <ul>
+                                    <li><a href="#">护肤</a></li>
+                                    <li><a href="#">彩妆</a></li>
+                                    <li><a href="#">美体</a></li>
+                                    <li><a href="#">美发</a></li>
+                                    <li><a href="#">男士</a></li>
+                                    <li><a href="#">香氛</a></li>
+                                    <li><a href="#">保健</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">家居</a>
+                        <div class="smallnav">
+                            <div class="smallnav_left">
+                                <h4>热门活动</h4>
+                                <ul>
+                                    <li><a href="#">职场温馨小物件 专场</a></li>
+                                    <li><a href="#">DOWNIA 澳洲家居&amp;地毯(满减)</a></li>
+                                    <li><a href="#">中秋佳节 床品特辑</a></li>
+                                    <li><a href="#">利快 创意家居</a></li>
+                                    <li><a href="#">LAYTEX &amp; TOM KATE 泰国乳胶枕</a></li>
+                                    <li><a href="#">德式 厨房</a></li>
+                                    <li><a href="#">热卖 小家电</a></li>
+                                    <li><a href="#">THERMOS 膳魔师专场</a></li>
+                                </ul>
+                                <p><a href="#" class="look">查看所有活动</a></p>
+                            </div>
+                            <div class="smallnav_right">
+                                <h4>商品分类</h4>
+                                <ul>
+                                    <li><a href="#">摆件</a></li>
+                                    <li><a href="#">厨具</a></li>
+                                    <li><a href="#">卫浴</a></li>
+                                    <li><a href="#">家电</a></li>
+                                    <li><a href="#">床品</a></li>
+                                    <li><a href="#">办公&amp;礼品</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">婴童</a>
+                        <div class="smallnav">
+                            <div class="smallnav_left">
+                                <h4>热门活动</h4>
+                                <ul>
+                                    <li><a href="#">REIMA 芬兰功能性童装专场</a></li>
+                                    <li><a href="#">REIMA 芬兰功能性鞋靴配饰专场</a></li>
+                                    <li><a href="#">欢乐周末 玩伴专场</a></li>
+                                    <li><a href="#">BIBI 巴西进口女童专场</a></li>
+                                    <li><a href="#">BIBI 巴西进口男童专场</a></li>
+                                    <li><a href="#">全球大搜罗 母婴尖货场</a></li>
+                                    <li><a href="#"> HAO 日本潮牌童装女童专场</a></li>
+                                    <li><a href="#">HAO 日本潮牌童装男童专场</a></li>
+                                </ul>
+                                <p><a href="#" class="look">查看所有活动</a></p>
+                            </div>
+                            <div class="smallnav_right">
+                                <h4>商品分类</h4>
+                                <ul>
+                                    <li><a href="#">服装</a></li>
+                                    <li><a href="#">鞋履</a></li>
+                                    <li><a href="#">其他</a></li>
+                                    <li><a href="#">配饰</a></li>
+                                    <li><a href="#">玩具</a></li>
+                                    <li><a href="#">母婴</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">老佛爷奥莱</a>
+                        <div class="smallnav" style="width: 315px;">
+                            <div class="smallnav_left">
+                                <h4>热门活动</h4>
+                                <ul>
+                                    <li><a href="#">老佛爷百货 女士裙装 夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 女士上装 夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 女士裤装 夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 女士鞋履 夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 女士包袋配饰夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 男士上装 夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 男士下装 夏日大降价</a></li>
+                                    <li><a href="#">老佛爷百货 男士鞋履 夏日大降价</a></li>
+                                </ul>
+                                <p><a href="#" class="look">查看所有活动</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">即将推出</a></li>
+                </ul>
+                <ul class="list_right">
+                    <li><a href="{% url 'mei:cart' %}" target="_blank" class="sum">0</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'mei:cart' %}" target="_blank">￥0.00</a></li>
+                    <div class="shopping">
+                        <div class="no_shopping">
+                            <p>购物袋暂无商品</p>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+		<a href="#"><div class="bigphoto"></div></a>
+						<a href="#"></a>
+{#					</div>#}
+		<div class="content_out">
+			<div class="content">
+				<a href="#"><img src="{% static 'img/1.jpg' %}" class="num1"></a>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;今日上新&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods">
+							<a href="{% url 'mei:goods' %}" target="_blank">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods1.jpg' %}">
+									<div class="blackbox">
+										2天后活动结束
+									</div>
+								</div>
+								<p>TORY BURCH 女士精品系列上新<span class="sale"><span>2</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>买手精选 设计师品牌服饰<span class="sale"><span>1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods_big">
+							<div class="goods_lun">
+								<a href="#">
+									<img src="{% static 'img/goods_big1.jpg' %}">
+								</a>
+								<a href="#">
+									<img src="{% static 'img/goods_big2.jpg' %}">
+								</a>
+							    <a href="#">
+									<img src="{% static 'img/goods_big1.jpg' %}">
+								</a>
+                            </div>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods3.jpg' %}">
+									<div class="blackbox">
+										购满699元，减100元
+										<br>
+										7天后活动结束
+									</div>
+								</div>
+								<p>上海时装周 设计师品牌专场（满减）<span class="sale"><span>0.7</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4.jpg' %}">
+									<div class="blackbox">
+										购满299元，减100元
+										<br>
+										7天后活动结束
+									</div>
+								</div>
+								<p>上海时装周 JANE EYRE专场（满减）<span class="sale"><span>2.5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>FRESH 馥蕾诗护肤品专场<span class="sale"><span>8.6</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods6.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>LACOSTE 男鞋<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods7.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>LACOSTE 女鞋<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods8.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>职场温馨小物件 专场<span class="sale"><span>6.1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods9.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>ALBION 澳尔滨护肤品专场<span class="sale"><span>7.6</span>折起</span></p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;热卖品牌&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_1.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>RUCOLINE 意式休闲时尚女鞋<span class="sale"><span>1.9</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_2.jpg' %}">
+									<div class="blackbox">
+										购满699元，减50元；满1299元，减100元
+										<br>
+										3天后活动结束
+									</div>
+								</div>
+								<p>MO&amp;Co. 90S极简时髦女装<span class="sale"><span>1.7</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_3.jpg' %}">
+									<div class="blackbox">
+										购满699元，减50元；满1299元，减100元
+										<br>
+										3天后活动结束
+									</div>
+								</div>
+								<p>MO&amp;CO. 玩趣街头时髦女装<span class="sale"><span>2.2</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_4.jpg' %}">
+									<div class="blackbox">
+										购满3000元，减300元；以此类推，上不封顶
+										<br>
+										5天后活动结束
+									</div>
+								</div>
+								<p>DOWNIA 澳洲家居&amp;地毯(满减)<span class="sale"><span>2.4</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_5.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>奢华女士 多品牌鞋履配饰<span class="sale"><span>2</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_6.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>奢华男士 多品牌鞋履配饰<span class="sale"><span>2</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_7.jpg' %}">
+									<div class="blackbox">
+										6天后活动结束
+									</div>
+								</div>
+								<p>中秋佳节 床品特辑<span class="sale"><span>1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_8.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>INITIAL 轻剪裁女装及配饰<span class="sale"><span>2.7</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2_9.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>INITIAL  轻剪裁男装及配饰<span class="sale"><span>2.7</span>折起</span></p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;女士活动&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods_banner">
+							<div class="goods_title"></div>
+							<div class="chooses">
+								<div class="choose">
+									<a href="#">配饰</a>
+									<a href="#">服装</a>
+									<a href="#">鞋履</a>
+									<a href="#">包袋</a>
+									<a href="#">手表&amp;首饰</a>
+									<a href="#">眼镜</a>
+								</div>
+								<p><a href="#">查看更多 &gt;</a></p>
+							</div>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods1.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>买手精选 设计师品牌服装<span class="sale"><span>1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods2.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>买手精选 设计师包袋配饰<span class="sale"><span>1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods3.jpg' %}">
+									<div class="blackbox">
+										购满699元，减100元
+										<br>
+										7天后活动结束
+									</div>
+								</div>
+							<p>上海时装周 设计师品牌专场（满减）<span class="sale"><span>0.7</span>折起</span></p>								</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4.jpg' %}">
+									<div class="blackbox">
+										购满299元，减100元
+										<br>
+										7天后活动结束
+									</div>
+								</div>
+								<p>上海时装周 JANE EYRE专场（满减）<span class="sale"><span>2.5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>FRESH 馥蕾诗护肤品专场<span class="sale"><span>8.6</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods6.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>LACOSTE 男鞋<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods7.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>LACOSTE 女鞋<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods8.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>职场温馨小物件 专场<span class="sale"><span>6.1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods9.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>ALBION 澳尔滨护肤品专场<span class="sale"><span>7.6</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods3_1.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>ZHUELLA 细腻色泽天然淡水珍珠专场<span class="sale"><span>2.5</span>折起</span></p>
+							</a>
+						</div>
+						<p class="more"><a href="#">查看更多&nbsp;&nbsp;</a></p>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;男士活动&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods_banner" id="goods_man">
+							<div class="goods_title" id="man"></div>
+							<div class="chooses" id="sizeblack">
+								<div class="choose">
+									<a href="#">配饰</a>
+									<a href="#">鞋履</a>
+									<a href="#">服装</a>
+									<a href="#">眼镜</a>
+								</div>
+								<p><a href="#">查看更多 &gt;</a></p>
+							</div>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4_1.jpg' %}">
+									<div class="blackbox">
+										6天后活动结束
+									</div>
+								</div>
+								<p>LACOSTE 男鞋<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4_2.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>INITIAL  轻剪裁男装及配饰<span class="sale"><span>2.7</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4_3.jpg' %}">
+									<div class="blackbox">
+										4天后活动结束
+									</div>
+								</div>
+								<p>SKECHERS 男鞋<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4_4.jpg' %}">
+									<div class="blackbox">
+										购满2件，享8.5折；满3件及以上，享8折
+										<br>
+										7天后活动结束
+									</div>
+								</div>
+								<p>LOTTUSSE 匠心工艺 典藏男士鞋包<span class="sale"><span>2.5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4_5.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>奢华男士 多品牌鞋履配饰<span class="sale"><span>2</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods4_6.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>VIKTOR &amp; ROLF 剑走偏锋的时尚艺术男士<span class="sale"><span>2</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods7.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>COSTUME N COSTUME 简洁精致男士<span class="sale"><span>3</span>折起</span></p>
+							</a>
+						</div>
+						<p class="more"><a href="#">查看更多&nbsp;&nbsp;</a></p>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;美妆活动&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods_banner" id="goods_beauty">
+							<div class="goods_title" id="beauty"></div>
+							<div class="chooses" id="sizeblack">
+								<div class="choose">
+									<a href="#">护肤</a>
+									<a href="#">彩妆</a>
+									<a href="#">美体</a>
+									<a href="#">美发</a>
+									<a href="#">男士</a>
+									<a href="#">香氛</a>
+									<a href="#">保健</a>
+								</div>
+								<p><a href="#">查看更多 &gt;</a></p>
+							</div>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5_1.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>The HISTORY OF WHOO 韩国宫廷护肤<span class="sale"><span>2.5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods9.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>ALBION 澳尔滨护肤品专场<span class="sale"><span>5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5_3.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>CLE DE PEAU BEAUTE 肌肤之钥高端护肤彩妆<span class="sale"><span>8.5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5_4.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>FRESH 馥蕾诗护肤品专场<span class="sale"><span>8.6</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5_5.jpg' %}">
+									<div class="blackbox">
+										2天后活动结束
+									</div>
+								</div>
+								<p>ELIZABETH ARDEN 雅顿畅销护肤品<span class="sale"><span>1.7</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5_6.jpg' %}">
+									<div class="blackbox">
+										购满499元，减50元
+										<br>
+										5天后活动结束
+									</div>
+								</div>
+								<p>PHYTO 发朵法国植物护发(满减)<span class="sale"><span>4.8</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods5_7.jpg' %}">
+									<div class="blackbox">
+										7天后活动结束
+									</div>
+								</div>
+								<p>SK-II 日本殿堂级护肤品<span class="sale"><span>6.5</span>折起</span></p>
+							</a>
+						</div>
+						<p class="more"><a href="#">查看更多&nbsp;&nbsp;</a></p>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;家居活动&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods_banner" id="goods_lifestyle">
+							<div class="goods_title" id="lifestyle"></div>
+							<div class="chooses" id="sizeblack">
+								<div class="choose">
+									<a href="#">摆件</a>
+									<a href="#">厨具</a>
+									<a href="#">卫浴</a>
+									<a href="#">家电</a>
+									<a href="#">床品</a>
+									<a href="#">办公&amp;礼品</a>
+								</div>
+								<p><a href="#">查看更多 &gt;</a></p>
+							</div>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods6_1.jpg' %}">
+									<div class="blackbox">
+										购满3000元，减300元；以此类推，上不封顶
+										<br>
+										4天后活动结束
+									</div>
+								</div>
+								<p>DOWNIA 澳洲家居&amp;地毯(满减)<span class="sale"><span>2.4</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods6_2.jpg' %}">
+									<div class="blackbox">
+										6天后活动结束
+									</div>
+								</div>
+								<p>职场温馨小物件 专场<span class="sale"><span>6.1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods6_3.jpg' %}">
+									<div class="blackbox">
+										1天后活动结束
+									</div>
+								</div>
+								<p>LAYTEX &amp; TOM KATE 泰国乳胶枕<span class="sale"><span>2.8</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods6_4.jpg' %}">
+									<div class="blackbox">
+										3天后活动结束
+									</div>
+								</div>
+								<p>德式 厨房<span class="sale"><span>2</span>折起</span></p>
+							</a>
+						</div>
+						<p class="more"><a href="#">查看更多&nbsp;&nbsp;</a></p>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;婴童活动&nbsp;&nbsp;]</h3>
+					<div class="goods_list">
+						<div class="goods_banner" id="goods_kids">
+							<div class="goods_title" id="kids"></div>
+							<div class="chooses">
+								<div class="choose">
+									<a href="#">服装</a>
+									<a href="#">鞋履</a>
+									<a href="#">其他</a>
+									<a href="#">配饰</a>
+									<a href="#">玩具</a>
+									<a href="#">母婴</a>
+								</div>
+								<p><a href="#">查看更多 &gt;</a></p>
+							</div>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods7_1.jpg' %}">
+									<div class="blackbox">
+										2天后活动结束
+									</div>
+								</div>
+								<p>REIMA  芬兰功能性鞋靴配饰专场 <span class="sale"><span>2.1</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods7_2.jpg' %}">
+									<div class="blackbox">
+										2天后活动结束
+									</div>
+								</div>
+								<p>REIMA  芬兰功能性童装专场<span class="sale"><span>3.7</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods3.jpg' %}">
+									<div class="blackbox">
+										4天后活动结束
+									</div>
+								</div>
+								<p>欢乐周末 玩伴专场<span class="sale"><span>3.5</span>折起</span></p>
+							</a>
+						</div>
+						<div class="goods">
+							<a href="#">
+								<div class="goods_photo">
+									<img src="{% static 'img/goods7_4.jpg' %}">
+									<div class="blackbox">
+										购满500元，减50元；以此类推，上不封顶
+										<br>
+										1天后活动结束
+									</div>
+								</div>
+								<p>BIBI  巴西进口女童专场<span class="sale"><span>4.5</span>折起</span></p>
+							</a>
+						</div>
+						<p class="more"><a href="#">查看更多&nbsp;&nbsp;</a></p>
+					</div>
+				</div>
+				<div class="content_in">
+					<h3>[&nbsp;&nbsp;活动即将开始&nbsp;&nbsp;]</h3>
+					<div class="tab">
+						<ul>
+							<li class="back">明天</li>
+							<li>周二</li>
+							<li>周三</li>
+							<li>周四</li>
+							<li>周五</li>
+						</ul>
+						<p>早上<span>9</span>点上新</p>
+					</div>
+					<div class="brands">
+						<!--<div class="brand">
+							<img src="img/tab1.jpg" />
+							<div class="brand_name">
+								<h5>LANCOME 兰蔻彩妆护肤</h5>
+								<p><span>4.1</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li><a href="#">预览</a></li>
+										<li><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="brand">
+							<img src="img/tab2.jpg" />
+							<div class="brand_name">
+								<h5>BIOTHERM 碧欧泉男士护肤专场</h5>
+								<p><span>6.5</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li class="only"><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="brand">
+							<img src="img/tab3.jpg" />
+							<div class="brand_name">
+								<h5>SONIA RYKIEL & SONIA BY SONIA RYKIEL 秋冬新款鞋包配饰</h5>
+								<p><span>2</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li><a href="#">预览</a></li>
+										<li><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="brand">
+							<img src="img/tab4.jpg" />
+							<div class="brand_name">
+								<h5>JC COLLECZIONE 雅致足踝佳人鞋履</h5>
+								<p><span>1.4</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li><a href="#">预览</a></li>
+										<li><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="brand">
+							<img src="img/tab5.jpg" />
+							<div class="brand_name">
+								<h5>SONIA RYKIEL & SONIA BY SONIA RYKIEL  秋冬新款女装</h5>
+								<p><span>1.9</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li><a href="#">预览</a></li>
+										<li><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="brand">
+							<img src="img/tab6.jpg" />
+							<div class="brand_name">
+								<h5>优雅格调 男士服装</h5>
+								<p><span>3.9</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li><a href="#">预览</a></li>
+										<li><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="brand">
+							<img src="img/tab7.jpg" />
+							<div class="brand_name">
+								<h5>风采肆意 潮流女装</h5>
+								<p><span>3</span>折起</p>
+							</div>
+							<div class="black">
+								<div class="subscribe">
+									<ul>
+										<li><a href="#">预览</a></li>
+										<li><a href="#">订阅</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_center">
+				<ul class="footer_ul1">
+					<li><a href="#" class="a1">100%品牌授权正品</a></li>
+					<li><a href="#" class="a2">满688免运费</a></li>
+					<li><a href="#" class="a3">7天无条件退货</a></li>
+					<li><a href="#" class="a4">超值折扣</a></li>
+					<li><a href="#" class="a5">9点限时闪购</a></li>
+					<li style="border: none;"><a href="#" class="a6">400-664-6698</a></li>
+				</ul>
+				<p class="footer_p1">
+					<a href="#">关于魅力惠</a>
+					<a href="#">加入我们</a>
+					<a href="#">联系我们</a>
+					<a href="#">使用帮助</a>
+					<a href="#">使用规则</a>
+					<a href="#">隐私声明</a>
+					<a href="#">网站地图</a>
+				</p>
+				<p><span>COPYRIGHT©2016 杭州魅俪信息技术有限公司版权所有</span>浙ICP备16004860号-1 </p>
+				<p>
+					<a href="#"><img src="{% static 'img/guohui.png' %}"></a>
+					<a href="#"><img src="{% static 'img/chengxin.png' %}"></a>
+				</p>
+			</div>
+		</div>
+		<div class="side">
+			<div class="side_top">
+				<p>100%</p>
+				官方正品
+			</div>
+			<div class="side_middle">
+				<p>下载APP</p>
+				<img src="{% static 'img/side_middle1.png' %}">
+				<p>微信公众号</p>
+				<img src="{% static 'img/side_middle2.png' %}">
+			</div>
+			<div class="return">
+				<p></p>
+			</div>
+		</div>
+    </body>
+</html>
