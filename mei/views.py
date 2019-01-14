@@ -13,9 +13,9 @@ def cart(request):
     return render(request,'cart.html')
 
 
-def detail(request,goodlistid):
+def detail(request,gooddetailid):
 
-   gooddetail = GoodDetail.objects.get(id=goodlistid)
+   gooddetail = GoodDetail.objects.get(id=gooddetailid)
 
 
    return render(request,'detail.html',{'gooddetail':gooddetail})
@@ -31,10 +31,16 @@ def goods(request):
 
 
 def register(request):
+
+
+
     return render(request,'register.html')
 
 
 def login(request):
+
+
+
     return render(request,'login.html')
 
 

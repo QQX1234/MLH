@@ -21,7 +21,7 @@ $(function(){
 		i++;
 	},2000)
 	function move(){
-		if(i >= size){
+		if(i >= 3){
 			$(".goods_lun").css("left",0);
 			i = 1;
 		}

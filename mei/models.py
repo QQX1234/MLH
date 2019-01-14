@@ -1,7 +1,7 @@
 from django.db import models
 
 class GoodList(models.Model):
-    id = models.CharField(max_length=40,primary_key=True)
+    productid = models.CharField(max_length=40)
     buyer = models.CharField(max_length=40)
     src1 = models.CharField(max_length=80)
     src2 = models.CharField(max_length=80)
@@ -21,7 +21,7 @@ class GoodList(models.Model):
 
 
 class GoodDetail(models.Model):
-    id = models.CharField(max_length=40,primary_key=True)
+    productid = models.CharField(max_length=40)
     buyer = models.CharField(max_length=40)
     src1 = models.CharField(max_length=80)
     src2 = models.CharField(max_length=80)

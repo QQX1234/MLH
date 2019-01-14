@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="{% static 'css/jquery.idcode.css' %}" />
 {#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
 {#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
-{#		<script type="text/javascript" src="{% static 'js/注册-登录页面.js' %}" ></script>#}
+		<script type="text/javascript" src="{% static 'js/register-login.js' %}" ></script>
 {#		<script type="text/javascript" src="{% static 'js/jquery.idcode.js' %}" ></script>#}
 	</head>
 	<body>
@@ -27,6 +27,9 @@
 							<p class="_login">已注册 ? <a href="{% url 'mei:login' %}">登录</a></p>
 							<p class="new">新客专享 50元现金券＋2次免运</p>
 						</div>
+
+
+
 						<div class="userinfo">
 							<span>账户名:</span><input type="text" placeholder="手机号/邮箱" id="user">
 							<p class="remind" id="entry_user">请输入手机号或邮箱</p>
@@ -43,7 +46,14 @@
 							<span>确认密码:</span><input type="password" id="_password">
 							<p class="remind" id="disagree">密码和确认密码不一致，请重新输入</p>
 							<span class="code1">验证码:</span><input type="text" class="code txtVerification" id="Txtidcode">
-							<span id="idcode"><div id="ehong-code" class="ehong-idcode-val ehong-idcode-val5" href="#" onblur="return false" onfocus="return false" oncontextmenu="return false" onclick="$.idcode.setCode()"><font color="#707F02">i</font><font color="#780320">9</font><font color="#D6A03C">3</font><font color="#1F72D8">R</font></div></span>
+							<span id="idcode">
+                                <div id="ehong-code" class="ehong-idcode-val ehong-idcode-val5" href="#" onblur="return false" onfocus="return false" oncontextmenu="return false" onclick="$.idcode.setCode()">
+                                    <font color="#707F02">i</font>
+                                    <font color="#780320">9</font>
+                                    <font color="#D6A03C">3</font>
+                                    <font color="#1F72D8">R</font>
+                                </div>
+                            </span>
 							<p class="remind" id="entry_code">请输入验证码</p>
 							<p class="remind" id="entry_code_true">请输入正确验证码</p>
 							<span class="code2">短信验证码:</span><input type="text" class="code phone_code">
@@ -59,6 +69,10 @@
 						</div>
 					</div>
 				</div>
+
+
+
+
 				<div class="footer_center">
 					<ul class="footer_ul1">
 						<li><a href="#" class="a1">100%品牌授权正品</a></li>

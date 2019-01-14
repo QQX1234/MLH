@@ -8,8 +8,9 @@
 		<link rel="stylesheet" href="{% static 'css/index.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
 {#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 {#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
-{#		<script type="text/javascript" src="{% static 'js/index.js' %}" ></script>#}
+		<script type="text/javascript" src="{% static 'js/index.js' %}" ></script>
 {#		<script type="text/javascript" src="{% static 'js/header-footer.js' %}" ></script>#}
 	</head>
 	<body>
@@ -249,7 +250,7 @@
 							</a>
 						</div>
 						<div class="goods">
-							<a href="#">
+							<a href="{% url 'mei:goods' %}">
 								<div class="goods_photo">
 									<img src="{% static 'img/goods2.jpg' %}">
 									<div class="blackbox">
@@ -259,6 +260,9 @@
 								<p>买手精选 设计师品牌服饰<span class="sale"><span>1</span>折起</span></p>
 							</a>
 						</div>
+
+
+{#                        小轮播图#}
 						<div class="goods_big">
 							<div class="goods_lun">
 								<a href="#">
@@ -272,6 +276,9 @@
 								</a>
                             </div>
 						</div>
+
+
+
 						<div class="goods">
 							<a href="#">
 								<div class="goods_photo">

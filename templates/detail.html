@@ -9,8 +9,9 @@
 		<link rel="stylesheet" href="{% static 'css/detail.css' %}" />
 {#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
 {#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
-{#		<script type="text/javascript" src="{% static 'js/header-footer.js' %}" ></script>#}
-{#		<script type="text/javascript" src="{% static 'js/detail.js' %}" ></script>#}
+
+		<script type="text/javascript" src="{% static 'js/header-footer.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/detail.js' %}" ></script>
 
 	</head>
     <body>
@@ -219,32 +220,45 @@
             <div class="goods_left">
                 <div class="small_img">
                     <img src="{{ gooddetail.src1 }}" title="{{ gooddetail.title }}" class="img">
-                    <img src="{% static 'img/product1_2_b.jpg' %}" title="红色荔枝纹拉链手提肩包" class="img">
-                    <img src="{% static 'img/product1_3_b.jpg' %}" title="红色荔枝纹拉链手提肩包" class="img">
-                    <img src="{% static 'img/product1_4_b.jpg' %}" title="红色荔枝纹拉链手提肩包" class="img">
+                    <img src="{{ gooddetail.src2 }}" title="{{ gooddetail.title }}" class="img">
+                    <img src="{{ gooddetail.src3 }}" title="{{ gooddetail.title }}" class="img">
+                    <img src="{{ gooddetail.src4 }}" title="{{ gooddetail.title }}" class="img">
+{#                    <img src="{% static 'img/product1_2_b.jpg' %}" title="红色荔枝纹拉链手提肩包" class="img">#}
+{#                    <img src="{% static 'img/product1_3_b.jpg' %}" title="红色荔枝纹拉链手提肩包" class="img">#}
+{#                    <img src="{% static 'img/product1_4_b.jpg' %}" title="红色荔枝纹拉链手提肩包" class="img">#}
                     <div class="small_area"></div>
                 </div>
                 <div class="big_area">
-                    <img src="{% static 'img/product1_1_b.jpg' %}" class="big_img">
-                    <img src="{% static 'img/product1_2_b.jpg' %}" class="big_img">
-                    <img src="{% static 'img/product1_3_b.jpg' %}" class="big_img">
-                    <img src="{% static 'img/product1_4_b.jpg' %}" class="big_img">
+                    <img src="{{ gooddetail.src1 }}" class="big_img">
+                    <img src="{{ gooddetail.src2 }}" class="big_img">
+                    <img src="{{ gooddetail.src3 }}" class="big_img">
+                    <img src="{{ gooddetail.src4 }}" class="big_img">
+{#                    <img src="{% static 'img/product1_1_b.jpg' %}" class="big_img">#}
+{#                    <img src="{% static 'img/product1_2_b.jpg' %}" class="big_img">#}
+{#                    <img src="{% static 'img/product1_3_b.jpg' %}" class="big_img">#}
+{#                    <img src="{% static 'img/product1_4_b.jpg' %}" class="big_img">#}
                 </div>
                 <div class="pic">
                     <ul>
-                        <li><img src="{% static 'img/product1_1_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>
-                        <li><img src="{% static 'img/product1_2_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>
-                        <li><img src="{% static 'img/product1_3_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>
-                        <li><img src="{% static 'img/product1_4_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>
+                        <li><img src="{{ gooddetail.index1 }}" title="{{ gooddetail.title }}"></li>
+                        <li><img src="{{ gooddetail.index2 }}" title="{{ gooddetail.title }}"></li>
+                        <li><img src="{{ gooddetail.index3 }}" title="{{ gooddetail.title }}"></li>
+                        <li><img src="{{ gooddetail.index4 }}" title="{{ gooddetail.title }}"></li>
+{#                        <li><img src="{% static 'img/product1_2_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>#}
+{#                        <li><img src="{% static 'img/product1_3_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>#}
+{#                        <li><img src="{% static 'img/product1_4_bs.jpg' %}" title="红色荔枝纹拉链手提肩包"></li>#}
                     </ul>
                 </div>
             </div>
             <div class="goods_right">
                 <h2>TORY BURCH<a href="#">分享</a></h2>
-                <h3>红色荔枝纹拉链手提肩包</h3>
+{#                <h3>红色荔枝纹拉链手提肩包</h3>#}
+                <h3>{{ gooddetail.title }}</h3>
                 <p>
-                    <span class="price">￥2,440&nbsp;&nbsp;</span>
-                    <span class="original_price">￥4,880</span>
+                    <span class="price">{{ gooddetail.price }}</span>
+{#                    <span class="price">￥2,440&nbsp;&nbsp;</span>#}
+                    <span class="original_price">{{ gooddetail.original_price }}</span>
+{#                    <span class="original_price">￥4,880</span>#}
                     <span><b>5</b>折</span>
                 </p>
                 <div class="relief">
