@@ -4,7 +4,7 @@ $(function(){
 		$(this).on("blur",function(){
 			//验证是否为空，电话和邮箱，或都不是
 			var reg_user_phone = /^1[3578]\d{9}$/;
-			var reg_user_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9_\.\-]+\.[a-zA-Z]+$/;
+			// var reg_user_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9_\.\-]+\.[a-zA-Z]+$/;
 			if($(this).val() == ""){
 				$("#entry_user").show();
 				$("#entry_user_true").hide();
@@ -13,11 +13,6 @@ $(function(){
 				$("#entry_user_true").hide();
 				$(".code2").show();
 				$(".phone_code").show();
-			}else if(reg_user_email.test($(this).val())){
-				$("#entry_user").hide();
-				$("#entry_user_true").hide();
-				$(".code2").hide();
-				$(".phone_code").hide();
 			}
 			else{
 				$("#entry_user").hide();
@@ -79,21 +74,7 @@ $(function(){
 			$("#disagree").hide();
 		}
 	})
-	//验证码
-	$("#Txtidcode").on("focus",function(){
-		$("#entry_code").show();
-		$("#entry_code_true").hide();
-		$(this).on("blur",function(){
-			var IsBy = $.idcode.validateCode();
-			if(IsBy){
-				$("#entry_code").hide();
-				$("#entry_code_true").hide();
-			}else{
-				$("#entry_code").hide();
-				$("#entry_code_true").show();
-			}
-		})
-	})
+
 	//您将收到魅力惠每日最新上线邮件
 	$("#checkbox").click(function(){
 		if($(this).hasClass("checkbox1")){
@@ -102,49 +83,74 @@ $(function(){
 			$(this).removeClass("checkbox2").addClass("checkbox1");
 		}
 	})
+
+
+	 $('#email').removeClass('has-error').addClass('has-success')
+	 $('#email>span').removeClass('glyphicon-remove').addClass('glyphicon-ok')
+
+
+	    // 触发注册
+    $('#register').click(function () {
+        var isregister = true
+
+        // 遍历所有的输入框是否正确
+        $('.remind').each(function () {
+            if ( !$(this).hasClass('has-success') ){
+                isregister = false
+            }
+        })
+
+        console.log(isregister)
+
+        if (isregister){    // 都正确
+            $('#register1').submit()
+        }
+    })
+
+
 	$.idcode.setCode();
 	//点击立即注册，注册账号
-	$("#register").on("click",function(){
-		//注册(cookie存储)
-		var users = $.cookie("users") ? JSON.parse($.cookie("users")) : [];
-		//先判断是否存在该用户
-		for (var i=0; i<users.length; i++) {
-			if(users[i].name == $("#user").val() ) {
-				$("#again").show();
-				return;
-			}
-		}
-		//注册用户
-		var user = {
-			name: $("#user").val(),
-			pwd: $("#password").val()
-		}
-		users.push(user); 
-		$.cookie("users", JSON.stringify(users), {expires:22, path:"/"});
-		window.open("登录页面.html");
-		console.log( $.cookie("users") );
-	})
+	// $("#register").on("click",function(){
+	// 	//注册(cookie存储)
+	// 	var users = $.cookie("users") ? JSON.parse($.cookie("users")) : [];
+	// 	//先判断是否存在该用户
+	// 	for (var i=0; i<users.length; i++) {
+	// 		if(users[i].name == $("#user").val() ) {
+	// 			$("#again").show();
+	// 			return;
+	// 		}
+	// 	}
+	// 	//注册用户
+	// 	var user = {
+	// 		name: $("#user").val(),
+	// 		pwd: $("#password").val()
+	// 	}
+	// 	users.push(user);
+	// 	$.cookie("users", JSON.stringify(users), {expires:22, path:"/"});
+	// 	window.open("登录页面.html");
+	// 	console.log( $.cookie("users") );
+	// })
 	//会员登录
-	$("#login").click(function(){
-		var users = $.cookie("users");
-		console.log(users);
-		if (users) {
-			users = JSON.parse(users); //cookie中的所有注册过的用户
-			var isExists = false; //表示是否存在该用户
-			for (var i=0; i<users.length; i++) {
-				if ( users[i].name == $("#user").val() && users[i].pwd == $("#password").val() ) {
-					window.open("魅力惠.html");
-					$("#wrong").hide();
-					isExists = true;
-				}
-			}
-			if (!isExists) {
-				$("#wrong").show();
-			}
-			
-		}
-		else {
-			alert("不存在用户, 请先注册!");
-		}
-	})
-})
+	// $("#login").click(function(){
+	// 	var users = $.cookie("users");
+	// 	console.log(users);
+	// 	if (users) {
+	// 		users = JSON.parse(users); //cookie中的所有注册过的用户
+	// 		var isExists = false; //表示是否存在该用户
+	// 		for (var i=0; i<users.length; i++) {
+	// 			if ( users[i].name == $("#user").val() && users[i].pwd == $("#password").val() ) {
+	// 				window.open("魅力惠.html");
+	// 				$("#wrong").hide();
+	// 				isExists = true;
+	// 			}
+	// 		}
+	// 		if (!isExists) {
+	// 			$("#wrong").show();
+	// 		}
+	//
+	// 	}
+	// 	else {
+	// 		alert("不存在用户, 请先注册!");
+	// 	}
+	// })
+// })

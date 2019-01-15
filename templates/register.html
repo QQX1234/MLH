@@ -5,12 +5,13 @@
 		<meta charset="UTF-8">
 		<title>注册页面</title>
 		<link rel="icon" href="{% static 'img/love.png' %}" type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+
 		<link rel="stylesheet" href="{% static 'css/jquery.idcode.css' %}" />
-{#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
-{#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
-		<script type="text/javascript" src="{% static 'js/register-login.js' %}" ></script>
-{#		<script type="text/javascript" src="{% static 'js/jquery.idcode.js' %}" ></script>#}
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+        <script type="text/javascript" src="{% static 'js/register.js' %}" ></script>
 	</head>
 	<body>
         	<div class="all">
@@ -29,41 +30,65 @@
 						</div>
 
 
+                        <div class="userinfo">
 
-						<div class="userinfo">
-							<span>账户名:</span><input type="text" placeholder="手机号/邮箱" id="user">
-							<p class="remind" id="entry_user">请输入手机号或邮箱</p>
-							<p class="remind" id="entry_user_true">请输入正确的手机号或邮箱</p>
-							<span>密码:</span><input type="password" placeholder="请输入6-20个字符" id="password" maxlength="20">
-							<p class="remind" id="entry_password">请输入密码</p>
-							<p class="remind" id="entry_password_last">密码长度不能少于6位</p>
-							<p class="remind" id="entry_password_danger">密码较弱，建议设置多种字符组成的复杂密码</p>
-							<div class="password">
-								<span class="save">低</span>
-								<span class="save">中</span>
-								<span class="save">高</span>
-							</div>
-							<span>确认密码:</span><input type="password" id="_password">
-							<p class="remind" id="disagree">密码和确认密码不一致，请重新输入</p>
-							<span class="code1">验证码:</span><input type="text" class="code txtVerification" id="Txtidcode">
-							<span id="idcode">
-                                <div id="ehong-code" class="ehong-idcode-val ehong-idcode-val5" href="#" onblur="return false" onfocus="return false" oncontextmenu="return false" onclick="$.idcode.setCode()">
-                                    <font color="#707F02">i</font>
-                                    <font color="#780320">9</font>
-                                    <font color="#D6A03C">3</font>
-                                    <font color="#1F72D8">R</font>
+{#                            <div class="register">#}
+                            <div class="back">
+{#                                <a href="{% url 'mei:index' %}">#}
+{#                                    <span class="glyphicon glyphicon-remove"></span>#}
+{#                                </a>#}
+                            </div>
+                            <form id="register" action="{% url 'mei:register' %}" method="post">
+                                {% csrf_token %}
+
+
+                                <div class="form-group has-feedback" id="email">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">邮箱</span>
+                                        <input type="text" class="form-control" placeholder="邮箱" name="email">
+                                    </div>
+                                    {#                glyphicon-remove  glyphicon-ok#}
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                 </div>
-                            </span>
-							<p class="remind" id="entry_code">请输入验证码</p>
-							<p class="remind" id="entry_code_true">请输入正确验证码</p>
-							<span class="code2">短信验证码:</span><input type="text" class="code phone_code">
-							<img src="{% static 'img/duanxin.png' %}" class="phone_code">
-							<p class="remind" id="again">注册用户名已存在，请重新注册！</p>
-							<input type="submit" value="立即注册" class="submit" id="register">
-							<p>点击立即注册即表示同意魅力惠<a href="#">使用条款</a></p>
-							<p><span class="checkbox1" id="checkbox"></span>您将收到魅力惠每日最新上线邮件</p>
-						</div>
-						<div class="QR_code">
+                                <p style="color: red;" id="err"></p>
+
+                                <div class="form-group has-feedback" id="password">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">密码</span>
+                                        <input type="password" class="form-control" placeholder="密码(数字、字母、下划线)"
+                                               name="password" maxlength="6">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="form-group has-feedback" id="name">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">名字</span>
+                                        <input type="text" class="form-control" placeholder="名字(3~10位)" name="name">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                </div>
+
+                                <div class="form-group has-feedback" id="phone">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">手机</span>
+                                        <input type="text" class="form-control" placeholder="手机号" name="phone"
+                                               maxlength="11">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                </div>
+
+                                {#          如果直接使用input点击，会直接提交给服务器 [假如有错误，也同样提交] #}
+                                <div id="subButton" class="btn btn-success">注册</div>
+
+                            </form>
+
+                        </div>
+                        <p>点击立即注册即表示同意魅力惠<a href="#">使用条款</a></p>
+                        <p><span class="checkbox1" id="checkbox"></span>您将收到魅力惠每日最新上线邮件</p>
+
+
+                        <div class="QR_code">
 							<img src="{% static 'img/saomiao.jpg' %}">
 							<p>扫描二维码或发送短信<br>“MLH”到“12114”<br>下载APP尊享独家优惠</p>
 						</div>
@@ -71,6 +96,42 @@
 				</div>
 
 
+{#                                <div class="form-group has-feedback" id="phone">#}
+{#                                    <div class="input-group">#}
+{#                                        <span>手机:</span><input type="text" placeholder="手机号" id="user" name="phone">#}
+{#                                        <p class="remind" id="entry_user">请输入手机号</p>#}
+{#                                        <p class="remind" id="entry_user_true">请输入正确的手机号</p>#}
+{#                                    </div>#}
+{#                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>#}
+{#                                </div>#}
+{##}
+{#                                <div class="form-group has-feedback" id="password">#}
+{#                                    <div class="input-group">#}
+{#                                        <span>密码:</span><input type="password" placeholder="请输入6-20个字符" maxlength="20" name="password">#}
+{#                                        <p class="remind" id="entry_password">请输入密码</p>#}
+{#                                        <p class="remind" id="entry_password_last">密码长度不能少于6位</p>#}
+{#                                        <p class="remind" id="entry_password_danger">密码较弱，建议设置多种字符组成的复杂密码</p>#}
+{#                                        <div class="password">#}
+{#                                            <span class="save">低</span>#}
+{#                                            <span class="save">中</span>#}
+{#                                            <span class="save">高</span>#}
+{#                                        </div>#}
+{#                                        <span>确认密码:</span><input type="password" id="_password">#}
+{#                                        <p class="remind" id="disagree">密码和确认密码不一致，请重新输入</p>#}
+{#                                    </div>#}
+{#                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>#}
+{#                                </div>#}
+{##}
+{#                                <div class="form-group has-feedback" id="name">#}
+{#                                    <div class="input-group">#}
+{#                                        <span class="code1">昵称:</span>#}
+{#                                        <input type="text" placeholder="用户名" class="code txtVerification" id="Txtidcode"#}
+{#                                               name="username">#}
+{#                                    </div>#}
+{#                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>#}
+{#                                </div>#}
+{##}
+{#                                <input type="submit" value="立即注册" class="submit" id="register">#}
 
 
 				<div class="footer_center">

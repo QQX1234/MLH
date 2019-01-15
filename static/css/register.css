@@ -3,7 +3,7 @@
 	background: transparent;
 	letter-spacing: 0.5px;
 	font-family: Microsoft YaHei,Tahoma,Arial,Helvetica,sans-serif;
-	font-size: 12px;}
+	font-size: 15px;}
 body{background: #dddddb;}
 .all{background: url(../img/photo.png);
 	background-repeat: repeat-x;
@@ -42,21 +42,42 @@ body{background: #dddddb;}
 	color: red;}
 /*用户输入*/
 .userinfo{margin-top: 10px;
-	padding-bottom: 19px;
-	border-bottom: 1px #a8aaab solid;}
-.userinfo span{display: inline-block;
-	width: 75px;
-	height: 30px;
-	margin-right: 15px;
-	text-align: right;
-	line-height: 30px;
-	margin-bottom: 10px;}
+	padding: 0 1rem;
+	/*padding-bottom: 19px;*/
+	border-bottom: 1px white solid;}
+.userinfo .form-group{
+	height: 40px;
+	/*width: 326px;*/
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	letter-spacing: 0.5px;
+	font-family: Microsoft YaHei,Tahoma,Arial,Helvetica,sans-serif;
+	font-size: 12px;
+}
+
+#subButton {
+    width: 260px;
+	text-align: center;
+	border: 1px #999 solid;
+	margin-left: 50px;
+}
+
+/*.userinfo span{display: inline-block;*/
+	/*width: 35px;*/
+	/*height: 35px;*/
+	/*margin-right: 15px;*/
+	/*text-align: right;*/
+	/*line-height: 35px;*/
+	/*margin-bottom: 10px;}*/
 .userinfo input{width: 253px;
-	height: 28px;
+	height: 35px;
 	padding-left: 5px;
 	border: 1px #999 solid;
-	margin-bottom: 10px;}
-.userinfo .submit{background: #db2725;
+	margin-bottom: 10px;
+	float: left;
+}
+.userinfo .btn btn-success{background: #db2725;
 	width: 260px;
 	height: 35px;
 	line-height: 35px;
@@ -66,24 +87,30 @@ body{background: #dddddb;}
 	border: none;
 	cursor: pointer;
 	margin-left: 90px;
-	padding: 0;}
-.userinfo .code{width: 108px;
-	height: 28px;}
+	padding: 10rem;}
+.userinfo .code{width: 248px;
+	height: 35px;}
 .userinfo img{float: right;}
 /*二维码*/
 #idcode{display: inline-block;
 	width: 135px;
-	height: 30px;
+	height: 35px;
 	float: right;
 	margin: 0;
 	text-align: left;
 	overflow: hidden;}
-.userinfo p{width: 260px;
-	height: 18px;
-	margin-left: 90px;
-	line-height: 18px;
-	margin-bottom: 8px;}
+/*.userinfo p{width: 260px;*/
+	/*height: 18px;*/
+	/*margin-left: 90px;*/
+	/*line-height: 18px;*/
+	/*margin-bottom: 8px;}*/
 .userinfo p a{color: black;}
+.userinfo p.error{
+    margin-left:2rem;
+    font-size: 0.8rem;
+    color: #e62e2e;
+    display: none;
+}
 .userinfo p a:hover{color: #db2725;}
 /*登录页面:忘记密码*/
 .userinfo p .forget{float: right;}
@@ -172,3 +199,29 @@ body{background: #dddddb;}
 .footer_center p{text-align: center;
 	margin-bottom: 20px;}
 .footer_center p span{margin-right: 30px;}
+
+
+
+/*.register{*/
+    /*!*width: 100%;*!*/
+    /*height: 100%;*/
+    /*position: absolute;*/
+    /*background: whitesmoke;*/
+/*}*/
+/*.register form{*/
+    /*padding: 0 1rem;*/
+/*}*/
+/*.register form .input-group{*/
+    /*margin: 0.5rem 0;*/
+/*}*/
+
+/*#subButton {*/
+    /*width: 100%;*/
+/*}*/
+
+/*.register .back{*/
+    /*text-align: right;*/
+/*}*/
+/*.register .back a{*/
+    /*font-size: 1.5rem;*/
+/*}*/

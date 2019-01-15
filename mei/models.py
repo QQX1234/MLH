@@ -39,3 +39,21 @@ class GoodDetail(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class User(models.Model):
+    # 邮箱 【邮箱登录】
+    email = models.CharField(max_length=20, unique=True)
+    # 密码
+    password = models.CharField(max_length=256)
+    # 名字
+    name = models.CharField(max_length=100)
+    # 手机号
+    phone = models.CharField(max_length=20)
+
+    # 令牌
+    token = models.CharField(max_length=256)
+
+    class Meta:
+        db_table = 'mei_user'
