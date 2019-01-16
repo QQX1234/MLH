@@ -12,7 +12,7 @@ $(function () {
             // 发起ajax请求 【问服务器该邮箱是否可用】
             // jQuery.get( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )
 
-            $.get('/axf/checkemail/', {'email': $(this).val()}, function (response) {
+            $.get('/mei/checkemail/', {'email': $(this).val()}, function (response) {
                 console.log(response)
                 if (response.status ){  // 可用
                     $('#email').removeClass('has-error').addClass('has-success')

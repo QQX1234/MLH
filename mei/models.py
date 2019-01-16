@@ -1,5 +1,8 @@
 from django.db import models
 
+
+
+# 商品列表
 class GoodList(models.Model):
     productid = models.CharField(max_length=40)
     buyer = models.CharField(max_length=40)
@@ -19,7 +22,7 @@ class GoodList(models.Model):
 
 
 
-
+# 商品详情表
 class GoodDetail(models.Model):
     productid = models.CharField(max_length=40)
     buyer = models.CharField(max_length=40)
@@ -41,7 +44,7 @@ class GoodDetail(models.Model):
         return self.title
 
 
-
+# 用户信息
 class User(models.Model):
     # 邮箱 【邮箱登录】
     email = models.CharField(max_length=20, unique=True)
@@ -57,3 +60,15 @@ class User(models.Model):
 
     class Meta:
         db_table = 'mei_user'
+
+
+ # 购物车
+class Cart(models.Model):
+
+    user = models.ForeignKey(User)
+
+    goods = models.ForeignKey(GoodDetail)
+
+    number = models.IntegerField()
+
+    isselect = models.BooleanField(default=True)

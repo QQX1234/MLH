@@ -5,9 +5,10 @@
 		<meta charset="utf-8" />
 		<title>魅力惠时尚奢侈品牌闪购网站 奢侈品排行榜销售NO.1 2000多个国际品牌官方合作伙伴-魅力惠官方网站</title>
 		<link rel="icon" href="{% static 'img/love.png' %}" type="image/x-icon">
+
 		<link rel="stylesheet" href="{% static 'css/index.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
-{#		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>#}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 {#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
 		<script type="text/javascript" src="{% static 'js/index.js' %}" ></script>
@@ -18,10 +19,26 @@
 		<div class="login">
 			<div class="header">
 				<ul class="header_left">
-					<li><img src="{% static 'img/zhuceyouli.gif' %}"><a href="{% url 'mei:register' %}" target="_blank">注册有礼</a></li>
+					{% if user == None %}
+					    <li>
+                            <img src="{% static 'img/zhuceyouli.gif' %}">
+                            <a href="{% url 'mei:register' %}" target="_blank">注册有礼</a>
+                        </li>
+                        <li>|</li>
+					{% endif %}
+
+					<li><a href="{% url 'mei:login' %}" target="_blank">{{ user.name | default:'未登录' }}</a></li>
 					<li>|</li>
-					<li><a href="{% url 'mei:login' %}" target="_blank">登录</a></li>
-					<li>|</li>
+                    {% if user %}
+{#                        <li class="quit"><a href="{% url 'mei:logout' %}">退出登录</a></li>#}
+                        <li>
+                            <section class="quit">
+                                <a href="{% url 'mei:logout' %}">退出登录</a>
+                            </section>
+                        </li>
+                        <li>|</li>
+                    {% endif %}
+
 					<li><a href="{% url 'mei:login' %}" target="_blank">收藏</a></li>
 				</ul>
 				<ul class="header_right">

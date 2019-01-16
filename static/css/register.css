@@ -57,10 +57,10 @@ body{background: #dddddb;}
 }
 
 #subButton {
-    width: 260px;
+    width: 330px;
 	text-align: center;
 	border: 1px #999 solid;
-	margin-left: 50px;
+	margin-left: 0px;
 }
 
 /*.userinfo span{display: inline-block;*/
@@ -163,7 +163,7 @@ body{background: #dddddb;}
 	height: auto;
 	margin-top: 20px;
 	float: right;}
-.QR_code p{float: right;
+.QR_code p{float: left;
 	margin: 16px 18px 0 0;}
 /*尾部*/
 .footer_center{width: 1000px;

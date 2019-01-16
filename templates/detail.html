@@ -18,10 +18,27 @@
     <div class="login">
         <div class="header">
             <ul class="header_left">
-                <li><img src="{% static 'img/zhuceyouli.gif' %}"><a href="{% url 'mei:register' %}" target="_blank">注册有礼</a></li>
+                {% if user == None %}
+                    <li>
+                        <img src="{% static 'img/zhuceyouli.gif' %}">
+                        <a href="{% url 'mei:register' %}" target="_blank">注册有礼</a>
+                    </li>
+                    <li>|</li>
+                {% endif %}
+
+                <li>
+                    <a href="{% url 'mei:login' %}" target="_blank">{{ user.name | default:'未登录' }}</a>
+                </li>
                 <li>|</li>
-                <li><a href="{% url 'mei:login' %}" target="_blank">登录</a></li>
-                <li>|</li>
+                {% if user %}
+                    <li>
+                        <section class="quit">
+                            <a href="{% url 'mei:logout' %}">退出登录</a>
+                        </section>
+                    </li>
+                    <li>|</li>
+                {% endif %}
+
                 <li><a href="{% url 'mei:login' %}" target="_blank">收藏</a></li>
             </ul>
             <ul class="header_right">
@@ -287,7 +304,7 @@
                     <a href="#">查看详情</a>
                 </div>
                 <img src="{% static 'img/freeduty_detail.png' %}" class="free">
-                <a href="#" class="btn">
+                <a href="{% url 'mei:cart' %}" class="btn">
                     <span>加入购物袋</span>
                 </a>
                 <div class="countdown">
