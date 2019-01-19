@@ -4,7 +4,7 @@ import random
 import time
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
-from mei.models import GoodList, GoodDetail, User
+from mei.models import GoodList, GoodDetail, User, Cart
 
 
 # 魅力惠首页
@@ -23,18 +23,34 @@ def index(request):
 
 
 # 购物车
-def cart(request):
+def cart(request,goodsid):
 
     # 获取token
 
-    token = request.session.get('token')
-    user = None
-    if token:
-        user = User.objects.get(token=token)
+    try:
+        token = request.session.get('token')
 
-        return render(request, 'cart.html', context={'user': user})
-    else:
-        return render(request,'login.html')
+        if token:
+            user = User.objects.get(token=token)
+
+            # goodsid = request.GET.get('goodsid')
+            # print(goodsid)
+            goods = GoodDetail.objects.get(pk=goodsid)
+            # print(goods.src1)
+            carts = Cart.objects.filter(user=user).exclude(number=0)
+            print(carts.count())
+
+            data = {
+                'user': user,
+                'carts': carts,
+                'goods': goods
+            }
+
+            return render(request, 'cart.html', context=data)
+    except:
+
+        return render(request, 'login.html')
+
 
 
 
@@ -44,16 +60,19 @@ def cart(request):
 def detail(request,gooddetailid):
 
    gooddetail = GoodDetail.objects.get(id=gooddetailid)
+   carts = []
 
    try:
        token = request.session.get('token')
 
        if token:
            user = User.objects.get(token=token)
+           carts = Cart.objects.filter(user=user)
 
            data = {
                'gooddetail': gooddetail,
-               'user':user
+               'user':user,
+               'carts': carts
            }
 
        return render(request, 'detail.html', data)
@@ -61,14 +80,15 @@ def detail(request,gooddetailid):
    except:
        data = {
            'gooddetail': gooddetail,
-           'user': None
+           'user': None,
+
        }
 
        return render(request, 'detail.html', data)
 
 
 
-   # return render(request,'detail.html',{'gooddetail':gooddetail})
+
 
 
 
@@ -100,7 +120,6 @@ def goods(request):
         return render(request, 'goods.html', data)
 
 
-    # return render(request,'goods.html',{'goodlists':goodlists})
 
 
 
@@ -202,3 +221,118 @@ def checkemail(request):
         return JsonResponse({'msg':'账号被占用','status':0})
     else:
         return  JsonResponse({'msg':'账号可以用','status':1})
+
+
+def addcart(request):
+
+    token = request.session.get('token')
+
+    if token:
+
+        user = User.objects.get(token=token)
+
+        goodsid = request.GET.get('goodsid')
+        #
+        # print("1"+ goodsid )
+        goods = GoodDetail.objects.get(pk=goodsid)
+
+        carts = Cart.objects.filter(user=user).filter(goods=goods)
+
+
+        if carts.exists():   #存在则修改ｎｕｍｂｅｒ
+            cart = carts.first()
+
+            cart.number = cart.number + 1
+            cart.save()
+            responseData = {
+                'status': 1,
+                'number': cart.number,
+            }
+
+        else:  #添加一条新纪录
+            cart = Cart()
+            cart.user = user
+            cart.goods = goods
+            cart.number = 1
+
+            cart.save()
+            responseData = {
+                'msg': '{}-添加购物车成功!'.format(goods.title),
+                'status': 1,
+                'number': cart.number,
+                'gooddetail':goods
+            }
+
+        return JsonResponse(responseData)
+
+
+    else:
+        return JsonResponse({'msg': '请登录后操作!', 'status': 0})
+
+
+
+
+
+
+def subcart(request):
+
+    token = request.session.get('token')
+
+    user = User.objects.get(token=token)
+    # print(user)
+    goodsid = request.GET.get('goodsid')
+
+    goods = GoodDetail.objects.get(pk=goodsid)
+
+    cart = Cart.objects.filter(user=user).filter(goods=goods).first()
+    cart.number = cart.number -1
+    # print(cart.number)
+    cart.save()
+
+    responseData = {
+        'msg': '{}-商品删减成功'.format(goods.title),
+        'status': 1,
+        'number': cart.number,
+        # 'gooddetail': goods
+    }
+    # print(responseData)
+    return JsonResponse(responseData)
+
+
+def changecartstatus(request):
+
+    cartid = request.GET.get('cartid')
+
+    cart = Cart.objects.get(pk=cartid)
+    cart.isselect = not cart.isselect
+    cart.save()
+
+    data = {
+        'msg': '状态修改成功',
+        'status': 1,
+        'isselect': cart.isselect
+    }
+
+    return JsonResponse(data)
+
+
+
+def changecartall(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+
+    # True/False
+    isall = request.GET.get('isall')
+    if isall == 'true':
+        isall = True
+    else:
+        isall = False
+
+    carts = Cart.objects.filter(user=user).update(isselect=isall)
+
+    data = {
+        'msg': '状态修改成功',
+        'status': 1,
+    }
+
+    return JsonResponse(data)

@@ -154,7 +154,7 @@
 	font-size: 24px;
 	text-align: center;
 	line-height: 34px;}
-.count .reduce{color: #ccc;}
+.count .reduce{color: black;}
 .count .add,.count .reduce{cursor: pointer;}
 .count .number{width: 40px;
 	background: white;

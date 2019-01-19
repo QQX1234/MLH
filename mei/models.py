@@ -72,3 +72,6 @@ class Cart(models.Model):
     number = models.IntegerField()
 
     isselect = models.BooleanField(default=True)
+
+    class Meta:
+        db_table = 'mei_cart'

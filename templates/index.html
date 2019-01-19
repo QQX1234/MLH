@@ -10,9 +10,8 @@
 		<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-{#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
 		<script type="text/javascript" src="{% static 'js/index.js' %}" ></script>
-{#		<script type="text/javascript" src="{% static 'js/header-footer.js' %}" ></script>#}
+
 	</head>
 	<body>
 
@@ -30,7 +29,6 @@
 					<li><a href="{% url 'mei:login' %}" target="_blank">{{ user.name | default:'未登录' }}</a></li>
 					<li>|</li>
                     {% if user %}
-{#                        <li class="quit"><a href="{% url 'mei:logout' %}">退出登录</a></li>#}
                         <li>
                             <section class="quit">
                                 <a href="{% url 'mei:logout' %}">退出登录</a>
@@ -39,7 +37,7 @@
                         <li>|</li>
                     {% endif %}
 
-					<li><a href="{% url 'mei:login' %}" target="_blank">收藏</a></li>
+					<li><a href="#" target="_blank">收藏</a></li>
 				</ul>
 				<ul class="header_right">
 					<li><a href="#">在线咨询</a></li>
@@ -65,7 +63,7 @@
                 <ul class="list_left">
                     <li><a href="#">首页</a></li>
                     <li>
-                        <a href="#">女士</a>
+                        <a href="{% url 'mei:goods' %}">女士</a>
                         <div class="smallnav">
                             <div class="smallnav_left">
                                 <h4>热门活动</h4>
@@ -235,9 +233,9 @@
                     <li><a href="#">即将推出</a></li>
                 </ul>
                 <ul class="list_right">
-                    <li><a href="{% url 'mei:cart' %}" target="_blank" class="sum">0</a></li>
+                    <li><a href="#" target="_blank" class="sum">0</a></li>
                     <li>|</li>
-                    <li><a href="{% url 'mei:cart' %}" target="_blank">￥0.00</a></li>
+                    <li><a href="#" target="_blank">￥0.00</a></li>
                     <div class="shopping">
                         <div class="no_shopping">
                             <p>购物袋暂无商品</p>
@@ -247,8 +245,7 @@
             </div>
         </div>
 		<a href="#"><div class="bigphoto"></div></a>
-						<a href="#"></a>
-{#					</div>#}
+        <a href="#"></a>
 		<div class="content_out">
 			<div class="content">
 				<a href="#"><img src="{% static 'img/1.jpg' %}" class="num1"></a>
