@@ -6,10 +6,10 @@
 		<title>魅力惠时尚奢侈品牌闪购网站 奢侈品排行榜销售NO.1 2000多个国际品牌官方合作伙伴-魅力惠官方网站</title>
 		<link rel="icon" href="{% static 'img/love.png' %}" type="image/x-icon">
 		<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
         <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
         <script src="{% static 'js/jquery.cookie.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>
 
@@ -259,9 +259,9 @@
                 <ul>
                     {% for cart in carts %}
 
-                        <div class="confirm-wrapper" cartid="{{ cart.id }}">
+                        <div class="confirm-wrapper" cartid="{{ cart.id }}" >
                             {% if cart.isselect %}
-                                <span class="glyphicon glyphicon-ok"></span>
+                                <span class="glyphicon glyphicon-ok" style="border: red 1px solid"></span>
                             {% else %}
                                 <span class="no"></span>
                             {% endif %}
@@ -309,8 +309,10 @@
                 <div class="bill">
                     <div class="bill-left">
                         <div class="all" isall="true">
-                            <span class="glyphicon glyphicon-ok"></span>
-                            <b>全选</b>
+                            <span class="glyphicon glyphicon-ok">
+                                <b>全选</b>
+                            </span>
+
                         </div>
                         <div class="total">
                             总金额（已免运费）： <span class="allMoney">￥<span>2540.00</span></span>
