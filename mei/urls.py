@@ -21,4 +21,12 @@ urlpatterns=[
     url(r'^changecartstatus/$',views.changecartstatus,name='changecartstatus'),
     # 是否全选
     url(r'^changecartall',views.changecartall,name='changecartall'),
+
+    url(r'^generateorder/$', views.generateorder, name='generateorder'),    # 下单
+    url(r'^orderlist/(\d+)/$', views.orderlist, name='orderlist'),
+    url(r'^orderdetail/(.+)/$', views.orderdetail, name='orderdetail'),    #　订单详情
+    url(r'^pay/$', views.pay, name='pay'),  # 支付
+    url(r'^appnotify/$', views.appnotify, name='appnotify'),    # 支付完成后(服务器)
+    url(r'^returnview/$', views.returnview, name='returnview'),
+
 ]

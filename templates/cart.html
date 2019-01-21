@@ -259,32 +259,35 @@
                 <ul>
                     {% for cart in carts %}
 
-                        <div class="confirm-wrapper" cartid="{{ cart.id }}" >
-                            {% if cart.isselect %}
-                                <span class="glyphicon glyphicon-ok" style="border: red 1px solid"></span>
-                            {% else %}
-                                <span class="no"></span>
-                            {% endif %}
+                        <div class="goods">
+                            <div class="confirm-wrapper" cartid="{{ cart.id }}">
+                                {% if cart.isselect %}
+                                    <span class="glyphicon glyphicon-ok" style="border: red 1px solid"></span>
+                                {% else %}
+                                    <span class="no"></span>
+                                {% endif %}
+                            </div>
                         </div>
 
-                        <li class="list_content_first">
-                            <p class="list_img"><a href="#">
-                                <img src="{{ cart.goods.index1 }}" title="{{ cart.goods.title }}"/> </a>
-                            </p>
-                            <p class="list_news">
-                                <span class="brand"><a href="{% url 'mei:goods' %}">Tory Burch</a></span>
-                                <span class="goods"><a href="#">{{ cart.goods.title }}</a></span>
-                                <span>尺寸：OS</span>
-                            </p>
-                        </li>
-                        <li style="line-height: 107px">{{ cart.goods.price }}</li>
-                        <li>
-                            <div class="number" >
-                                <span class="reduce" goodsid="{{ cart.goods.id }}">-</span>
-                                <span class="num">{{ cart.number }}</span>
-                                <span class="add" goodsid="{{ cart.goods.id }}">+</span>
-                            </div>
-                        </li>
+                        <div class="content-wrapper">
+                            <li class="list_content_first">
+                                <p class="list_img"><a href="#">
+                                    <img src="{{ cart.goods.index1 }}" title="{{ cart.goods.title }}"/> </a>
+                                </p>
+                                <p class="list_news">
+                                    <span class="brand"><a href="{% url 'mei:goods' %}">Tory Burch</a></span>
+                                    <span class="goods"><a href="#">{{ cart.goods.title }}</a></span>
+                                    <span>尺寸：OS</span>
+                                </p>
+                            </li>
+                            <li class="price" style="line-height: 107px">{{ cart.goods.price }}</li>
+                            <li>
+                                <div class="number">
+                                    <span class="reduce" goodsid="{{ cart.goods.id }}">-</span>
+                                    <span class="num">{{ cart.number }}</span>
+                                    <span class="add" goodsid="{{ cart.goods.id }}">+</span>
+                                </div>
+                            </li>
 
                         <li></li>
                         <li style="line-height: 107px">{{ cart.goods.price }}</li>
@@ -321,7 +324,7 @@
 
                     <div class="bill-right">
 {#                        <span class="btn2">继续购物</span>#}
-                        <span class="btn3">立即结账</span>
+                        <span class="btn3" id="generateorder">立即结账</span>
                     </div>
                 </div>
 

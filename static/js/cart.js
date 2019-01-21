@@ -54,10 +54,8 @@ $(function () {
                     $that.prev().prev().hide()
                     $that.prev().hide()
                 }
-
-
             }
-
+                total()
         })
     })
 
@@ -86,7 +84,7 @@ $(function () {
                 }
 
             }
-
+                total()
         })
     })
 
@@ -129,4 +127,53 @@ $(function () {
             }
         })
     })
+
+
+    //计算总数
+    function total() {
+        var sum = 0
+        $('.goods').each(function () {
+            var $confirm = $(this).find('.confirm-wrapper')
+            var $content = $(this).find('.content-wrapper')
+
+            if ($confirm.find('.glyphicon-ok').length){
+                var num = $content.find('.num').attr('num')
+                var price = $content.find('.price').attr('price')
+                ap = num * price
+                sum += num * price
+            }
+        })
+    }
+
+        //设置显示金额
+
+    // $('.bill .total').html(parseFloat(sum))
+
+
+    // 下单
+    $('.bill-right #generateorder').click(function () {
+        console.log('123')
+        $.get('/mei/generateorder/', function (response) {
+            console.log(response)
+            if (response.status == 1) {  // 订单详情页
+                window.open('/mei/orderdetail/' + response.identifier + '/', target = '_self')
+            }
+        })
+    })
+
+
+    //     $('.btn3').click(function () {
+    //         console.log('13')
+    //     var identifier = $(this).attr('identifier')
+    //     data = {
+    //         'identifier':identifier
+    //     }
+    //     $.get('/mei/pay/', data, function (response) {
+    //         console.log(response)
+    //         if (response.status == 1){
+    //             window.open(response.alipayurl, target='_self')
+    //         }
+    //     })
+    // })
+
 })

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link rel="icon" href="{% static 'img/love.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/orderdetail.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.idcode.css' %}"/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/orderdetail.js' %}"></script>
+
+
+</head>
+<body>
+<div class="all">
+   <div class="orderdetail">
+        <ul>
+            {% for order in orders %}
+                <li>
+                    <a href="{% url 'mei:orderdetail' order.identifier %}">
+                        {{ forloop.counter }}、{{ order.identifier }}
+                    <span style="background: red; color: white">
+                        {% if order.status == 0 %}
+                            未付款
+                        {% elif order.status == 1 %}
+                            已付款
+                        {% endif %}
+                    </span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="footer_center">
+            <ul class="footer_ul1">
+                <li><a href="#" class="a1">100%品牌授权正品</a></li>
+                <li><a href="#" class="a2">满688免运费</a></li>
+                <li><a href="#" class="a3">7天无条件退货</a></li>
+                <li><a href="#" class="a4">超值折扣</a></li>
+                <li><a href="#" class="a5">9点限时闪购</a></li>
+                <li style="border: none;"><a href="#" class="a6">400-664-6698</a></li>
+            </ul>
+            <p><span>COPYRIGHT©2016 杭州魅俪信息技术有限公司版权所有</span>浙ICP备16004860号-1 </p>
+        </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

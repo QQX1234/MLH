@@ -116,6 +116,24 @@ $(function () {
         })
     })
 
+    //购物车点击事件
+    // $('#pay').click(function () {
+    //     var goodsid = $(this).attr('goodsid')
+    //     data = {
+    //         'goodsid': goodsid
+    //     }
+    //     $.get('/mei/cart/',data,function (response) {
+    //          if (response.status == 0){
+    //             window.open('/mei/login',target='_self')
+    //
+    //         } else if (response.status == 1) {
+    //              window.open('/mei/cart/goodsid',target='_self')
+    //          }
+    //
+    //     })
+    // })
+
+
 
     // 右侧商品数量加减
     // var count = 1;
